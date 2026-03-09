@@ -145,7 +145,7 @@ export default function Home() {
           </section>
         </div>
 
-        <div data-aos="fade-down">
+        <div data-aos="fade-right">
           <section
             id="about"
             className="min-h-screen bg-slate-800/50 flex items-center justify-center border-t border-white/5"

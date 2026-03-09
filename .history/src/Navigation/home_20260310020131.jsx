@@ -65,19 +65,34 @@ export default function Homepage() {
         </div>
 
         {/* Right Column: Profile Image */}
-        <div className="flex justify-center order-1 md:order-2 max-sm:mt-12 relative">
-          {/* Decorative Ring */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-purple-600 to-blue-500 rounded-full blur-2xl opacity-30 animate-pulse"></div>
+        <div className="flex justify-center order-1 md:order-2 mt-12 sm:mt-0 relative">
+          {/* Decorative Ring - Slower, smoother pulse */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-purple-600 to-blue-500 rounded-full blur-2xl opacity-30 animate-[pulse_3s_ease-in-out_infinite]"></div>
 
-          <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full p-1 bg-gradient-to-br from-purple-500 to-blue-600 shadow-2xl">
-            <img
-              src={hover ? me : chey}
-              alt="Portrait of Chey Kimrith, Web Developer"
-              className="w-full h-full rounded-full object-cover border-4 border-slate-900 transition-transform duration-500 hover:scale-110"
-              loading="lazy"
-              onMouseEnter={() => setHover(true)}
-              onMouseLeave={() => setHover(false)}
-            />
+          {/* Main Container */}
+          <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full p-1 bg-gradient-to-br from-purple-500 to-blue-600 shadow-2xl transition-transform duration-500 hover:scale-105">
+            {/* Image Container for Cross-fade */}
+            <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-slate-900 bg-slate-900">
+              {/* Base Image (Chey) */}
+              <img
+                src={chey}
+                alt="Portrait of Chey Kimrith, Web Developer"
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
+                  hover ? "opacity-0" : "opacity-100"
+                }`}
+                loading="lazy"
+              />
+
+              {/* Hover Image (Me) */}
+              <img
+                src={me}
+                alt="Portrait of Chey Kimrith, Web Developer (Hover)"
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
+                  hover ? "opacity-100" : "opacity-0"
+                }`}
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </div>

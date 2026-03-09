@@ -47,16 +47,14 @@ export default function Home() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
     AOS.init({
       duration: 2000,
-      once: false,
+      once: true,
     });
   }, []);
 
@@ -136,32 +134,27 @@ export default function Home() {
 
       {/* Page Content */}
       <main>
-        <div data-aos="fade-up">
-          <section id="home">
-            {/* Optional: Background Glow Effect */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-purple-600/20 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
+        <div data-aos="fade-up"></div>
+        <section id="home">
+          {/* Optional: Background Glow Effect */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-purple-600/20 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
 
-            <Homepage />
-          </section>
-        </div>
+          <Homepage />
+        </section>
 
-        <div data-aos="fade-down">
-          <section
-            id="about"
-            className="min-h-screen bg-slate-800/50 flex items-center justify-center border-t border-white/5"
-          >
-            <Aboutus />
-          </section>
-        </div>
+        <section
+          id="about"
+          className="min-h-screen bg-slate-800/50 flex items-center justify-center border-t border-white/5"
+        >
+          <Aboutus />
+        </section>
 
-        <div data-aos="fade-down">
-          <section
-            id="experience"
-            className="min-h-screen bg-slate-800/50 flex items-center justify-center border-t border-white/5"
-          >
-            <Experience />
-          </section>
-        </div>
+        <section
+          id="experience"
+          className="min-h-screen bg-slate-800/50 flex items-center justify-center border-t border-white/5"
+        >
+          <Experience />
+        </section>
       </main>
     </div>
   );

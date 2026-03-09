@@ -47,16 +47,14 @@ export default function Home() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
     AOS.init({
       duration: 2000,
-      once: false,
+      once: true,
     });
   }, []);
 
@@ -145,7 +143,7 @@ export default function Home() {
           </section>
         </div>
 
-        <div data-aos="fade-down">
+        <div data-aos="fade-right">
           <section
             id="about"
             className="min-h-screen bg-slate-800/50 flex items-center justify-center border-t border-white/5"
@@ -154,14 +152,12 @@ export default function Home() {
           </section>
         </div>
 
-        <div data-aos="fade-down">
-          <section
-            id="experience"
-            className="min-h-screen bg-slate-800/50 flex items-center justify-center border-t border-white/5"
-          >
-            <Experience />
-          </section>
-        </div>
+        <section
+          id="experience"
+          className="min-h-screen bg-slate-800/50 flex items-center justify-center border-t border-white/5"
+        >
+          <Experience />
+        </section>
       </main>
     </div>
   );

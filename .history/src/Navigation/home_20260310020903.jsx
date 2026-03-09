@@ -1,9 +1,16 @@
 import chey from "../assets/chey.png";
 import me from "../assets/me.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Homepage() {
   const [hover, setHover] = useState(false);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
 
   return (
     <section className="min-h-screen flex items-center justify-center px-4 py-12 relative overflow-hidden bg-slate-900">

@@ -1,10 +1,6 @@
-import chey from "../assets/chey.png";
-import me from "../assets/me.png";
-import { useState } from "react";
+import me from "../assets/chey.png";
 
 export default function Homepage() {
-  const [hover, setHover] = useState(false);
-
   return (
     <section className="min-h-screen flex items-center justify-center px-4 py-12 relative overflow-hidden bg-slate-900">
       {/* Background Decor: Subtle purple glow */}
@@ -71,12 +67,10 @@ export default function Homepage() {
 
           <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full p-1 bg-gradient-to-br from-purple-500 to-blue-600 shadow-2xl">
             <img
-              src={hover ? me : chey}
-              alt="Portrait of Chey Kimrith, Web Developer"
+              src={me}
+              alt="Portrait of Chey Kimrith, Frontend Developer"
               className="w-full h-full rounded-full object-cover border-4 border-slate-900 transition-transform duration-500 hover:scale-110"
               loading="lazy"
-              onMouseEnter={() => setHover(true)}
-              onMouseLeave={() => setHover(false)}
             />
           </div>
         </div>

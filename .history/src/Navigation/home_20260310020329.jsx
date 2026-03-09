@@ -1,9 +1,19 @@
 import chey from "../assets/chey.png";
 import me from "../assets/me.png";
 import { useState } from "react";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Homepage() {
   const [hover, setHover] = useState(false);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
 
   return (
     <section className="min-h-screen flex items-center justify-center px-4 py-12 relative overflow-hidden bg-slate-900">
@@ -65,19 +75,21 @@ export default function Homepage() {
         </div>
 
         {/* Right Column: Profile Image */}
-        <div className="flex justify-center order-1 md:order-2 max-sm:mt-12 relative">
-          {/* Decorative Ring */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-purple-600 to-blue-500 rounded-full blur-2xl opacity-30 animate-pulse"></div>
+        <div data-aos="flip-up">
+          <div className="flex justify-center order-1 md:order-2 max-sm:mt-12 relative">
+            {/* Decorative Ring */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-purple-600 to-blue-500 rounded-full blur-2xl opacity-30 animate-pulse"></div>
 
-          <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full p-1 bg-gradient-to-br from-purple-500 to-blue-600 shadow-2xl">
-            <img
-              src={hover ? me : chey}
-              alt="Portrait of Chey Kimrith, Web Developer"
-              className="w-full h-full rounded-full object-cover border-4 border-slate-900 transition-transform duration-500 hover:scale-110"
-              loading="lazy"
-              onMouseEnter={() => setHover(true)}
-              onMouseLeave={() => setHover(false)}
-            />
+            <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full p-1 bg-gradient-to-br from-purple-500 to-blue-600 shadow-2xl">
+              <img
+                src={hover ? me : chey}
+                alt="Portrait of Chey Kimrith, Web Developer"
+                className="w-full h-full rounded-full object-cover border-4 border-slate-900 transition-transform duration-500 hover:scale-110"
+                loading="lazy"
+                onMouseEnter={() => setHover(true)}
+                onMouseLeave={() => setHover(false)}
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import chey from "../assets/chey.png";
 import me from "../assets/me.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Homepage() {
   const [hover, setHover] = useState(false);
