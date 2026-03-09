@@ -62,7 +62,7 @@ export default function Home() {
 
   return (
     // Main Background: Dark Gray/Slate
-    <div className="min-h-screen bg-slate-900 text-gray-100 font-sans selection:bg-purple-500 selection:text-white">
+    <div className="w-full bg-slate-900 text-gray-100 font-sans selection:bg-purple-500 selection:text-white">
       {/* Navbar */}
       <nav
         className={`fixed w-full z-50 transition-all duration-300 border-b border-white/5 ${
@@ -129,7 +129,7 @@ export default function Home() {
       <main>
         <section id="home">
           {/* Optional: Background Glow Effect */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-purple-600/20 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
 
           <Homepage />
         </section>

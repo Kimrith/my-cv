@@ -129,7 +129,7 @@ export default function Home() {
       <main>
         <section id="home">
           {/* Optional: Background Glow Effect */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-purple-600/20 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  bg-purple-600/20 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
 
           <Homepage />
         </section>
