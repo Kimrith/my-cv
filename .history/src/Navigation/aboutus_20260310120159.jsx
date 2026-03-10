@@ -92,7 +92,7 @@ export default function Aboutus() {
             />
           </svg>
         ),
-        skills: ["MongoDB", "MySQL", "PostgreSQL"],
+        skills: ["MongoDB", "MySQL", "PostgreSQL""],
       },
       tools: {
         title: "Tools",
